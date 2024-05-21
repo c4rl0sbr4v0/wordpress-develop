@@ -406,7 +406,7 @@ final class WP_Interactivity_API {
 	 */
 	private function evaluate( $directive_value, string $default_namespace, $context = false ) {
 		list( $ns, $path ) = $this->extract_directive_value( $directive_value, $default_namespace );
-		if ( empty( $path ) ) {
+		if ( empty( $ns ) || empty( $path ) ) {
 			return null;
 		}
 
@@ -483,7 +483,7 @@ final class WP_Interactivity_API {
 	 *               second item.
 	 */
 	private function extract_directive_value( $directive_value, $default_namespace = null ): array {
-		if ( empty( $directive_value ) || is_bool( $directive_value ) ) {
+		if ( empty( $directive_value ) || is_bool( $directive_value ) || 'null' === $default_namespace ) {
 			return array( $default_namespace, null );
 		}
 

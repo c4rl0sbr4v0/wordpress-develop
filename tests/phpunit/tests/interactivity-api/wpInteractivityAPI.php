@@ -924,6 +924,13 @@ JSON;
 	}
 
 	/**
+	 * Tests the `evaluate` method for non compatible namespaces: null, {}, "".
+	 */
+
+	public function test_evaluate_non_compatible_namespaces() {
+	}
+
+	/**
 	 * Tests the `kebab_to_camel_case` method.
 	 *
 	 * @covers ::kebab_to_camel_case
