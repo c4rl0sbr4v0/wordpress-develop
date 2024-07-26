@@ -239,6 +239,13 @@ class WP_Script_Modules {
 			global $wp_scripts;
 			if ( isset( $wp_scripts ) ) {
 				wp_print_inline_script_tag(
+					'{"noLoadEventRetriggers": true}',
+					array(
+						'id'   => 'wp-esms-options',
+						'type' => 'esms-options',
+					)
+				);
+				wp_print_inline_script_tag(
 					wp_get_script_polyfill(
 						$wp_scripts,
 						array(
